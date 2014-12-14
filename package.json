@@ -1,0 +1,41 @@
+{
+  "name": "ember-stub",
+  "description": "ember-stub",
+  "version": "0.1.0",
+  "private": false,
+  "author": "John Sandoval",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.1.x"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "node node_modules/grunt-cli/bin/grunt test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "ember-template-compiler": "^1.9.0-alpha",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-csslint": "^0.2.0",
+    "grunt-contrib-cssmin": "^0.9.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ember-templates": "^0.5.0-alpha",
+    "grunt-env": "^0.4.1",
+    "grunt-karma": "^0.9.0",
+    "handlebars": "^2.0.0",
+    "karma": "^0.12.28",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^0.2.7",
+    "karma-mocha": "^0.1.9",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "load-grunt-tasks": "^0.4.0",
+    "mocha": "^2.0.1"
+  }
+}
