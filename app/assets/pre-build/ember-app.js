@@ -4,7 +4,9 @@ var App = Ember.Application.create({
 });
 
 
-App.Router.map(function() {
-
+App.Router.map(function () {
+    'use strict';
+    this.route('about');
+    this.route('play');
 });
 

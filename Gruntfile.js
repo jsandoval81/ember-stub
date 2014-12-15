@@ -127,6 +127,7 @@ module.exports = function (grunt) {
             //== Concat the CSS files
             css: {
                 src: [
+                    'bower_components/bootstrap/dist/css/bootstrap.css',
                     'app/styles/global.css',
                     'app/styles/style.css'
                 ],
@@ -136,6 +137,7 @@ module.exports = function (grunt) {
             dependencyjs: {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/handlebars/handlebars.js',
                     'bower_components/ember/ember.js',
                     'bower_components/ember-data/ember-data.js'
@@ -182,6 +184,9 @@ module.exports = function (grunt) {
         //== JavaScript minification ==
         //=============================
         uglify: {
+            options: {
+                //report: 'gzip'
+            },
             build: {
                 src:  'app/assets/build/js/application.js',
                 dest: 'app/assets/build/js/application.min.js'
