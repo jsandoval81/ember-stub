@@ -5,6 +5,52 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        //=====================================
+        //== Run blocking tasks concurrently ==
+        //=====================================
+        concurrent: {
+            //== Automate the dev environment
+            dev: {
+                options: {
+                    logConcurrentOutput: true
+                },
+                tasks: ['watch', 'nodemon:dev']
+            }
+        },
+
+        //======================
+        //== Node app control ==
+        //======================
+        nodemon: {
+            //== Monitor the dev Node app for Node file updates
+            dev: {
+                script: 'server.js',
+                options: {
+                    ignore: [ '.bower-cache/**/*',
+                              '.bower-registry/**/*',
+                              '.bower-tmp/**/*',
+                              '.git/**/*',
+                              'app/**/*',
+                              'bower_components/**/*',
+                              'node_modules/**',
+                              'tests/**/*',
+                              '.bowerrc',
+                              '.csslintrc',
+                              '.gitignore',
+                              '.jshintignore',
+                              '.jshintrc',
+                              'bower.json',
+                              'Brocfile.js',
+                              'Gruntfile.js',
+                              'karma.conf.js',
+                              'package.json',
+                              'npm_debug.log',
+                              'README.md'
+                            ]
+                }
+            }
+        },
+
         //=================
         //== Watch files ==
         //=================
@@ -28,7 +74,7 @@ module.exports = function (grunt) {
             //== Lint and re-build the client JS .min file after client JS updates
             clientjs: {
                 files: ['app/**/*.js', '!app/assets/**/*.js'],
-                tasks: ['concat:emberjs', 'jshint:clientjs', 'concat:appjs', 'uglify'],
+                tasks: ['concat:emberjs', 'jshint:clientjs', 'concat:appjs'/*, 'uglify'*/], //Disable uglify for dev build speed
                 options: {
                     spawn: true
                 }
@@ -51,7 +97,7 @@ module.exports = function (grunt) {
             //== Reload the web page after updates to CSS, JS, and HTML builds (requires server app)
             livereload: {
                 options: { livereload: true },
-                files: ['app/assets/build/**/*.css', 'app/assets/build/**/*.js', 'app/*.html']
+                files: ['app/assets/build/**/*.css', 'app/assets/build/**/*.js', 'app/*.html', 'server.js']
             }
         },
 
@@ -222,6 +268,6 @@ module.exports = function (grunt) {
     //== Test task (Lint and run JS tests)
     //grunt.registerTask('test', [ 'jshint:testjs', 'karma:unit:run' ]);
     //== Dev task (Prepare assets, start application, watch for changes)
-    grunt.registerTask('dev', [ 'less:dev', 'csslint:strict', 'concat:css', 'cssmin', 'concat:dependencyjs', 'concat:emberjs', 'jshint:clientjs', 'emberTemplates', 'concat:appjs', 'uglify', 'watch' ]);
+    grunt.registerTask('dev', [ 'less:dev', 'csslint:strict', 'concat:css', 'cssmin', 'concat:dependencyjs', 'concat:emberjs', 'jshint:clientjs', 'emberTemplates', 'concat:appjs', 'uglify', 'concurrent:dev' ]);
 
 };
