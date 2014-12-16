@@ -9,7 +9,7 @@ Ember.TEMPLATES["application"] = Ember.Handlebars.template({"1":function(depth0,
   },"5":function(depth0,helpers,partials,data) {
   data.buffer.push("<a href=\"#\">About</a>");
   },"7":function(depth0,helpers,partials,data) {
-  data.buffer.push("<a href=\"#\">Play</a>");
+  data.buffer.push("<a href=\"#\">Products</a>");
   },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var stack1, helperMissing=helpers.helperMissing, buffer = '';
   data.buffer.push("<div>\r\n    <!-- Top Navbar -->\r\n    <div class=\"navbar navbar-default navbar-fixed-top\">\r\n        <div class=\"container\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\r\n                    <span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span>\r\n                </button>\r\n                ");
@@ -28,7 +28,7 @@ Ember.TEMPLATES["application"] = Ember.Handlebars.template({"1":function(depth0,
   },"hashTypes":{'tagName': "STRING"},"hashContexts":{'tagName': depth0},"fn":this.program(5, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
   if (stack1 != null) { data.buffer.push(stack1); }
   data.buffer.push("\r\n                    ");
-  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "play", {"name":"link-to","hash":{
+  stack1 = ((helpers['link-to'] || (depth0 && depth0['link-to']) || helperMissing).call(depth0, "products", {"name":"link-to","hash":{
     'tagName': ("li")
   },"hashTypes":{'tagName': "STRING"},"hashContexts":{'tagName': depth0},"fn":this.program(7, data),"inverse":this.noop,"types":["STRING"],"contexts":[depth0],"data":data}));
   if (stack1 != null) { data.buffer.push(stack1); }
@@ -43,6 +43,34 @@ Ember.TEMPLATES["index"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-be
   data.buffer.push("<h2 id=\"title\">Welcome to Ember.js...</h2>");
   },"useData":true});
 
-Ember.TEMPLATES["play"] = Ember.Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  data.buffer.push("<h2 id=\"title\">This is the sandbox</h2>");
-  },"useData":true});
+Ember.TEMPLATES["play"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
+  var stack1, buffer = '';
+  data.buffer.push("        <li>");
+  stack1 = helpers._triageMustache.call(depth0, "product.title", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("</li>\r\n");
+  return buffer;
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, buffer = '';
+  data.buffer.push("<h2 id=\"title\">This is the sandbox</h2>\r\n\r\n<ul>\r\n");
+  stack1 = helpers.each.call(depth0, "product", "in", "model", {"name":"each","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["ID","ID","ID"],"contexts":[depth0,depth0,depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("</ul>\r\n");
+  return buffer;
+},"useData":true});
+
+Ember.TEMPLATES["products"] = Ember.Handlebars.template({"1":function(depth0,helpers,partials,data) {
+  var stack1, buffer = '';
+  data.buffer.push("        <li>");
+  stack1 = helpers._triageMustache.call(depth0, "product.title", {"name":"_triageMustache","hash":{},"hashTypes":{},"hashContexts":{},"types":["ID"],"contexts":[depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("</li>\r\n");
+  return buffer;
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+  var stack1, buffer = '';
+  data.buffer.push("<h2 id=\"title\">This is the sandbox</h2>\r\n\r\n<ul>\r\n");
+  stack1 = helpers.each.call(depth0, "product", "in", "model", {"name":"each","hash":{},"hashTypes":{},"hashContexts":{},"fn":this.program(1, data),"inverse":this.noop,"types":["ID","ID","ID"],"contexts":[depth0,depth0,depth0],"data":data});
+  if (stack1 != null) { data.buffer.push(stack1); }
+  data.buffer.push("</ul>\r\n");
+  return buffer;
+},"useData":true});

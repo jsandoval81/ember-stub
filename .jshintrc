@@ -87,6 +87,7 @@
         "expect"      : false,
         "spyOn"       : false,
         "jQuery"      : false,
-        "Ember"       : false
+        "Ember"       : false,
+        "DS"          : false
     }
 }
