@@ -195,7 +195,10 @@ module.exports = function (grunt) {
             emberjs: {
                 src: [
                     'app/app.js',
-                    'app/routes/router.js'
+                    'app/models/products.js',
+                    'app/routes/router.js',
+                    'app/controllers/products.js',
+                    'app/controllers/product.js'
                 ],
                 dest: 'app/assets/pre-build/ember-app.js',
                 nonull: true
