@@ -1,11 +1,18 @@
 <h2 id="title">This is the sandbox</h2>
 
-<ul>
-    {{#each product in model}}
-        <li>
-            {{#link-to 'product' product}}
-                {{product.title}}
-            {{/link-to}}
-        </li>
-    {{/each}}
-</ul>
+<div class="row">
+    <div class="col-md-2">
+        <div id="sidebar" class="list-group">
+            {{#each product in model}}
+                {{#link-to 'product' product classNames='list-group-item'}}
+                    {{product.title}}
+                {{/link-to}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="col-md-10">
+        {{outlet}}
+    </div>
+</div>
+
+

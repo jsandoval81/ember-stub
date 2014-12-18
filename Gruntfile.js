@@ -88,7 +88,7 @@ module.exports = function (grunt) {
                 }
             },
             handlebars: {
-                files: ['app/templates/*.hbs'],
+                files: ['app/templates/**/*.hbs'],
                 tasks: ['emberTemplates'],
                 options: {
                     spawn: true
@@ -161,7 +161,7 @@ module.exports = function (grunt) {
                    templateBasePath: 'app/templates/'
                 },
                 files: {
-                    'app/templates/compiled/templates.js': ['app/templates/*.hbs']
+                    'app/templates/compiled/templates.js': ['app/templates/**/*.hbs']
                 }
             }
         },
@@ -195,7 +195,8 @@ module.exports = function (grunt) {
             emberjs: {
                 src: [
                     'app/app.js',
-                    'app/models/products.js',
+                    'app/models/product.js',
+                    'app/models/review.js',
                     'app/routes/router.js',
                     'app/controllers/products.js',
                     'app/controllers/product.js'

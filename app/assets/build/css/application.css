@@ -6348,11 +6348,16 @@ body {
   font-family: 'Calibri', 'Tahoma', sans-serif;
   background-color: #ffffff;
 }
+/** Navbar **/
 .navbar li {
   cursor: pointer;
 }
 .navbar li:hover {
   background-color: #F1F1F1;
+}
+/** Side bar **/
+.list-group {
+  display: inline-block;
 }
 /*********************/
 /** Utility classes **/
