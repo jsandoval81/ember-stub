@@ -1,17 +1,30 @@
 
-<div>
-    <h3>{{title}}</h3>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3 vertical-center">
+                <img class="product-300" />
+            </div><!--
+        --><div class="col-md-9 vertical-center">
+            <div>
+                <h3>{{title}}</h3>
+            </div>
+            <div>
+                <strong>Remaining:</strong> {{quantity}}
+            </div>
+            <div>
+                <h4>Reviews</h4>
+                <ul>
+                    {{#each review in reviews}}
+                        <li>{{review.text}}</li>
+                        {{else}}
+                        <li>No reviews yet</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </div>
-<div>
-    <strong>Price:</strong> {{price}}
-</div>
-<div>
-    <h4>Reviews</h4>
-    <ul>
-        {{#each review in reviews}}
-            <li>{{review.text}}</li>
-            {{else}}
-            <li>No reviews yet</li>
-        {{/each}}
-    </ul>
-</div>
+
+

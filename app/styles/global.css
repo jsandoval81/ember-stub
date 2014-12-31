@@ -22,9 +22,23 @@ body {
 .navbar li:hover {
   background-color: #F1F1F1;
 }
-/** Side bar **/
-.list-group {
-  display: inline-block;
+/** Breadcrumbs **/
+.breadcrumbs {
+  padding: 0 20px;
+}
+.breadcrumbs li {
+  display: inline;
+}
+.breadcrumbs li .breadcrumb-spacer {
+  padding: 0 5px;
+}
+.breadcrumbs li:last-of-type a {
+  color: #000000;
+  cursor: default;
+  text-decoration: none;
+}
+.search-form {
+  padding: 0 0 20px 0;
 }
 /*********************/
 /** Utility classes **/
@@ -34,4 +48,15 @@ body {
   display: inline-block;
   vertical-align: middle;
   float: none;
+}
+/*******************/
+/** Image classes **/
+/*******************/
+img.product-100 {
+  width: 100px;
+  height: 100px;
+}
+img.product-300 {
+  width: 200px;
+  height: 200px;
 }

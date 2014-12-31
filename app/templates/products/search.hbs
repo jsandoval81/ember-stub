@@ -1,0 +1,15 @@
+
+{{#each product in model}}
+    <div class="row">
+        <div class="col-md-2 text-right vertical-center">
+            <img class="product-100" />
+        </div><!--
+        --><div class="col-md-10 vertical-center">
+            {{#link-to 'product' product}}
+                <h3>{{product.title}}</h3>
+            {{/link-to}}
+        </div>
+    </div>
+{{/each}}
+
+

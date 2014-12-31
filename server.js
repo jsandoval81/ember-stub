@@ -1,13 +1,19 @@
 
-var express = require('express'),
-    app     = express();
+var express  = require('express'),
+    app      = express(),
+    someData = require('./someData.json');
 
 //== Set path for static assets
 app.use(express.static(__dirname + '/app/assets/build'));
 
-//== Load index page on index route
+//== Index route
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/app/index.html');
+});
+
+//== GET /products
+app.get('/products', function (req, res) {
+    res.json(someData);
 });
 
 //== Start server

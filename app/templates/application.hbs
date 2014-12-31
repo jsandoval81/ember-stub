@@ -12,11 +12,13 @@
                 <ul class="nav navbar-nav">
                     {{#link-to 'index' tagName='li'}}<a href="#">Home</a>{{/link-to}}
                     {{#link-to 'about' tagName='li'}}<a href="#">About</a>{{/link-to}}
-                    {{#link-to 'products' tagName='li'}}<a href="#">Products</a>{{/link-to}}
+                    {{#link-to 'products' tagName='li'}}<a href="#">Search Products</a>{{/link-to}}
+                    {{#link-to 'index' tagName='li'}}<a href="#">Add a Product</a>{{/link-to}}
                 </ul>
             </div>
         </div>
     </div>
+    {{render 'breadcrumbs'}}
 
     {{outlet}}
 

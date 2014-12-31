@@ -22,9 +22,27 @@ body {
     background-color: #F1F1F1;
 }
 
-/** Side bar **/
-.list-group {
-    display: inline-block;
+/** Breadcrumbs **/
+.breadcrumbs {
+    padding: 0 20px;
+
+    li {
+        display: inline;
+
+        .breadcrumb-spacer {
+            padding: 0 5px;
+        }
+
+        &:last-of-type a {
+            color: @black;
+            cursor: default;
+            text-decoration: none;
+        }
+    }
+}
+
+.search-form {
+    padding: 0 0 20px 0;
 }
 
 /*********************/
@@ -37,4 +55,15 @@ body {
     float: none;
 }
 
+/*******************/
+/** Image classes **/
+/*******************/
+img.product-100 {
+    width: 100px;
+    height: 100px;
+}
 
+img.product-300 {
+    width: 200px;
+    height: 200px;
+}

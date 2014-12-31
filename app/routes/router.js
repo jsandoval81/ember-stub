@@ -6,6 +6,7 @@ App.Router.map(function () {
     'use strict';
     this.route('about');
     this.resource('products', function () {
+        this.route('search', {path: 'search/:title'});
         this.resource('product', { path: '/:id' });
     });
 });
@@ -13,41 +14,16 @@ App.Router.map(function () {
 //============
 //== Routes ==
 //============
-App.ApplicationRoute = Ember.Route.extend({
-    //== Load some fixture-type data
+//== Products route
+App.ProductsRoute = Ember.Route.extend({
     model: function () {
-        'use strict';        
-        this.store.push('product', {
-            id: 1,
-            title: 'Product 1',
-            price: '4.99',
-            reviews: [1001, 1002]
-        });
-        this.store.push('product', {
-            id: 2,
-            title: 'Product 2',
-            price: '8.99'
-        });
-        this.store.push('product', {
-            id: 3,
-            title: 'Product 3',
-            price: '12.99'
-        });
-        this.store.push('review', {
-            id: 1001,
-            text: 'Fabulous product',
-            product: 1
-        });
-        this.store.push('review', {
-            id: 1002,
-            text: 'Only OK',
-            product: 1
-        });
+        'use strict';
+        return this.store.find('product');
     }
 });
 
-//== Products route
-App.ProductsRoute = Ember.Route.extend({
+//== Search route
+App.ProductsSearchRoute = Ember.Route.extend({
     model: function () {
         'use strict';
         return this.store.all('product');

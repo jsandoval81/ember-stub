@@ -1,0 +1,8 @@
+<ul class="breadcrumbs">
+    {{#each crumb in breadcrumbs}}
+        <li>
+            <span class="breadcrumb-spacer">&gt;</span>{{#link-to crumb.routeName}}{{crumb.controller.breadcrumbName}}{{/link-to}}
+        </li>
+    {{/each}}    
+</ul>
+
